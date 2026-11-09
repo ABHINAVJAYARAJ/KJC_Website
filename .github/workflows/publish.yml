@@ -1,0 +1,62 @@
+# publish.yml
+# Author: Abhinav Jayaraj
+# Contact: jayarajabhinav@gmail.com
+# Publish only the public website files to GitHub Pages.
+
+name: Publish KJC Website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'dev/**'
+      - '.github/workflows/publish.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: kjc-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          test -s index.html
+          test -s dev/index.html
+          test -s dev/styles.css
+          test -s dev/script.js
+          test -s dev/consultants/index.html
+
+      - name: Prepare public files
+        run: |
+          mkdir -p public
+          cp index.html public/index.html
+          cp -R dev public/dev
+          touch public/.nojekyll
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
