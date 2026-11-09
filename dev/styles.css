@@ -1591,3 +1591,38 @@ html[data-theme="dark"] .network-stat span {
 #links a[aria-current="page"] { color: var(--red); }
 .consultants-link { margin-left: 20px; }
 @media (max-width:720px) { .consultants-link { margin-left: 0; } }
+
+/* Visitor counter is shown only after its URLs are configured. */
+.footer-country-counter[hidden] {
+  display: none;
+}
+
+.footer-country-counter {
+  display: flex;
+  flex-basis: 100%;
+  order: 10;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+  padding-top: 20px;
+  border-top: 1px solid #474747;
+}
+
+.footer-country-counter-label {
+  color: #aaa6a1;
+  font-size: 11px;
+  letter-spacing: .05em;
+}
+
+.footer-country-counter-link {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.footer-country-counter img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}

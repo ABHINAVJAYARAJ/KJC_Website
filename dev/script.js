@@ -4,6 +4,10 @@
 
 // Set the published Google Forms URL before accepting client enquiries.
 const GOOGLE_FORM_URL = '';
+
+// Use the image and statistics URLs supplied by Flag Counter.
+const FLAG_COUNTER_IMAGE_URL = '';
+const FLAG_COUNTER_STATS_URL = '';
 const THEME_STORAGE_KEY = 'kjc-theme';
 
 const navigation = document.querySelector('#nav');
@@ -87,9 +91,36 @@ function initialiseEnquiryLinks() {
   });
 }
 
+function initialiseFlagCounter() {
+  const container = document.querySelector('[data-flag-counter]');
+  if (!container || !FLAG_COUNTER_IMAGE_URL || !FLAG_COUNTER_STATS_URL) return;
+
+  try {
+    const imageURL = new URL(FLAG_COUNTER_IMAGE_URL);
+    const statsURL = new URL(FLAG_COUNTER_STATS_URL);
+    const validHost = (hostname) => hostname === 'flagcounter.com' || hostname.endsWith('.flagcounter.com');
+    if (imageURL.protocol !== 'https:' || statsURL.protocol !== 'https:' ||
+        !validHost(imageURL.hostname) || !validHost(statsURL.hostname)) return;
+
+    const link = container.querySelector('a');
+    const image = document.createElement('img');
+    image.alt = 'Visitor countries';
+    image.width = 200;
+    link.href = statsURL.href;
+    image.referrerPolicy = 'no-referrer';
+    image.addEventListener('error', () => { container.hidden = true; });
+    image.src = imageURL.href;
+    link.appendChild(image);
+    container.hidden = false;
+  } catch {
+    // A malformed counter URL must not affect the rest of the website.
+  }
+}
+
 initialiseMobileMenu();
 initialiseTheme();
 initialiseEnquiryLinks();
+initialiseFlagCounter();
 
 
 // Show the initials fallback if an approved portrait cannot be loaded.
