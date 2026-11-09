@@ -6,8 +6,8 @@
 const GOOGLE_FORM_URL = '';
 
 // Use the image and statistics URLs supplied by Flag Counter.
-const FLAG_COUNTER_IMAGE_URL = '';
-const FLAG_COUNTER_STATS_URL = '';
+const FLAG_COUNTER_IMAGE_URL = 'https://s05.flagcounter.com/count/XaC6/bg_F8F7F4/txt_1D2229/border_FFFFFF/columns_2/maxflags_6/viewers_0/labels_0/pageviews_0/flags_0/percent_0/';
+const FLAG_COUNTER_STATS_URL = 'https://info.flagcounter.com/XaC6';
 const THEME_STORAGE_KEY = 'kjc-theme';
 
 const navigation = document.querySelector('#nav');
