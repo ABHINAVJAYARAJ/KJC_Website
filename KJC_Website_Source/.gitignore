@@ -1,0 +1,14 @@
+# .gitignore
+# Author: Abhinav Jayaraj
+# Contact: jayarajabhinav@gmail.com
+
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+/private/
+/publish/
+*.csv
+!templates/*.example.csv
+*.xlsx
+*.xls

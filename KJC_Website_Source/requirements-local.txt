@@ -1,0 +1,5 @@
+# requirements-local.txt
+# Author: Abhinav Jayaraj
+# Contact: jayarajabhinav@gmail.com
+
+Pillow>=10.0,<13.0

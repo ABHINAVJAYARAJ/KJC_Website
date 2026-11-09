@@ -1,0 +1,10 @@
+# commands.example.txt
+# Author: Abhinav Jayaraj
+# Contact: jayarajabhinav@gmail.com
+
+# Save as private/actions.txt. Do not commit KCL IDs or source images.
+# Format: action_firstname_lastname_kclid
+add_alex_smith_90000001
+update_jamie_jones_90000002
+update_image_robin_lee_90000003
+remove_taylor_chen_90000004

@@ -1,0 +1,42 @@
+<!--
+  profile.template.html
+  Author: Abhinav Jayaraj
+  Contact: jayarajabhinav@gmail.com
+-->
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="__DESCRIPTION__">
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="King's Junior Consulting">
+  <meta property="og:title" content="__TITLE__">
+  <meta property="og:description" content="__DESCRIPTION__">
+  <title>__TITLE__</title>
+  <link rel="icon" type="image/png" href="../../assets/favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../consultants.css">
+  <script>try { if (localStorage.getItem('kjc-theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch {}</script>
+</head>
+<body>
+__HEADER__
+<main id="main">
+  <section class="profile-header"><div class="inner">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="../">Consultants</a><span aria-hidden="true">/</span><span aria-current="page">__NAME__</span></nav>
+    __EXAMPLE_FLAG__
+    <div class="profile-heading"><div><div class="eyebrow">KJC / CONSULTANTS</div><h1>__NAME_HEADING__</h1></div><div class="profile-meta"><span class="eyebrow">ROLE / FOCUS</span><h2>__ROLE__</h2><p>__FOCUS__</p><span class="profile-status">__MEMBER_STATUS__</span></div></div>
+  </div></section>
+  <section class="profile-body"><div class="inner profile-body-grid"><div>
+    <section class="profile-section"><span class="eyebrow">01 / ABOUT</span><h2>About</h2><p>__BIO__</p></section>
+    __TIMELINE_SECTION__
+    __EXPERTISE_SECTION__
+    __BACKGROUND_SECTION__
+  </div><aside class="profile-aside">__PHOTO__<h3>Connect</h3><p>__CONNECT_DESCRIPTION__</p>__LINKEDIN__<a class="profile-back" href="../">← Back to all consultants</a></aside></div></section>
+__FOOTER__
+</main>
+<script defer src="../../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!--
+  index.html
+  Author: Abhinav Jayaraj
+  Contact: jayarajabhinav@gmail.com
+-->
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Meet the consultants behind King's Junior Consulting. Consultant profiles and LinkedIn links will be published here soon." name="description"/>
+<meta content="noindex, nofollow" name="robots"/>
+<meta content="#f8f7f4" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="King's Junior Consulting" property="og:site_name"/>
+<meta content="Our Consultants | King's Junior Consulting" property="og:title"/>
+<meta content="Meet the people behind King's Junior Consulting. Our consultant directory is being prepared." property="og:description"/>
+<title>Our Consultants | King's Junior Consulting</title>
+<link href="../assets/favicon.png" rel="icon" type="image/png"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="consultants.css" rel="stylesheet"/>
+<script>
+    try {
+      if (localStorage.getItem('kjc-theme') === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch {}
+  </script>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+<div class="topline">
+<div class="inner">
+<span>
+     King's Junior Consulting / London
+    </span>
+<span>
+     Strategy / Marketing / Management
+    </span>
+</div>
+</div>
+<header class="header">
+<nav aria-label="Main navigation" class="inner nav" id="nav">
+<a aria-label="King's Junior Consulting — homepage" class="brand" href="../index.html#top">
+<img alt="KJC — King’s Junior Consulting" class="brand-logo" height="82" src="../assets/kjc-logo.png" width="94"/>
+</a>
+<div class="navlinks" id="links">
+<a href="../index.html#services">Services</a>
+<a href="../index.html#approach">Approach</a>
+<a href="../index.html#about">About</a>
+<a aria-current="page" href="./">Consultants</a><a href="../index.html#contact">
+      Contact
+     </a>
+</div>
+<button aria-label="Switch to dark mode" aria-pressed="false" class="theme-toggle" id="theme-toggle" title="Switch theme" type="button">
+<svg aria-hidden="true" class="theme-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="4">
+</circle>
+<path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.32 11.32 1.4 1.4M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.32-11.32 1.4-1.4">
+</path>
+</svg>
+<svg aria-hidden="true" class="theme-moon" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24">
+<path d="M20.8 13.1A9 9 0 0 1 10.9 3.2a9 9 0 1 0 9.9 9.9Z">
+</path>
+</svg>
+<span class="theme-label">
+      Dark
+     </span>
+</button>
+<a class="nav-cta" href="../index.html#contact">
+     Start a conversation
+     <span aria-hidden="true">
+      ↗
+     </span>
+</a>
+<button aria-controls="links" aria-expanded="false" class="mobile-toggle" id="menu" type="button">
+     Menu +
+    </button>
+</nav>
+</header>
+<main id="main">
+
+<section aria-labelledby="consultants-title" class="consultants-intro">
+<div class="inner directory-heading">
+<nav aria-label="Breadcrumb" class="breadcrumbs"><a href="../index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Our people</span></nav>
+<div class="directory-intro-grid">
+<div>
+<div class="eyebrow"><span class="section-index">KJC /</span> OUR PEOPLE</div>
+<h1 id="consultants-title">Meet our <em>consultants.</em></h1>
+</div>
+<div class="directory-intro-copy"><p>Different perspectives, working together on real business questions. Explore the people and expertise behind King's Junior Consulting.</p></div>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="directory-title" class="consultants-body">
+<div class="inner">
+<div class="directory-caption" id="directory-title"><span class="caption-rule"></span>CONSULTANT DIRECTORY</div>
+<div class="consultants-status" id="consultants-status">
+<div class="construction-note"><span>Under construction</span><p>We're preparing individual consultant profiles and LinkedIn links. The directory will open once the information has been confirmed.</p></div>
+<div class="example-directory">
+<div class="example-label">Directory layout preview <span>Example only</span></div>
+<div aria-hidden="true" class="example-search"><span>Search by name or expertise</span><span>⌕</span></div>
+<div class="letter-heading">E</div>
+<a aria-label="Open the example consultant profile page" class="person-row" href="profile-example/">
+<div class="person-summary"><strong>Profile layout example</strong><span>Example entry — no personal information</span></div>
+<span class="person-area">Profile template</span><span aria-hidden="true" class="row-arrow">↗</span>
+</a>
+<p class="example-hint">This example shows how visitors will open an individual profile. It does not represent a KJC consultant.</p>
+</div>
+</div>
+<div class="consultant-directory" hidden="" id="consultants-directory">
+<div class="directory-toolbar">
+<div class="directory-input"><label for="consultant-search">Find a consultant</label><input autocomplete="off" id="consultant-search" placeholder="Search by name or expertise" type="search"/></div>
+<div class="directory-input directory-select"><label for="consultant-focus">Area of expertise</label><select id="consultant-focus"><option value="">All areas</option></select></div><div class="directory-input directory-status"><label for="consultant-status">Membership</label><select id="consultant-status"><option value="active">Current consultants</option><option value="former">Former consultants</option><option value="">Everyone</option></select></div>
+</div>
+<p aria-live="polite" class="directory-results-count" id="consultants-count" role="status"></p>
+<div class="directory-list" id="consultants-list"></div>
+<p class="directory-empty" hidden="" id="consultants-empty">No matching consultants. Try another name or area of expertise.</p>
+</div>
+</div>
+</section>
+<section aria-label="Project enquiries" class="consultants-contact">
+<div class="inner consultants-contact-grid">
+<div>
+<div class="eyebrow">WORK WITH KJC</div>
+<h2>Have a project in mind?</h2>
+<p>Tell us a little about the challenge and we'll explore whether KJC is a good fit.</p>
+</div>
+<a class="consultants-contact-link" href="../index.html#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+</div>
+<div class="inner"><footer class="footer">
+<a aria-label="King's Junior Consulting — homepage" class="footer-brand" href="../index.html#top">
+<span class="footer-logo-wrap">
+<img alt="KJC — King's Junior Consulting" class="footer-logo" height="311" src="../assets/kjc-logo.png" width="356"/>
+</span>
+<span class="footer-brand-text">
+        King's Junior Consulting
+       </span>
+</a>
+<nav aria-label="Footer navigation" class="footer-links">
+<a href="../index.html#services">
+        Services
+       </a>
+<a href="../index.html#approach">
+        Approach
+       </a>
+<a href="../index.html#about">
+        About
+       </a>
+<a href="./">Consultants</a><a href="../index.html#top">
+        Back to top ↑
+       </a>
+</nav>
+<nav aria-label="Social media" class="footer-social">
+<a aria-label="King's Junior Consulting on LinkedIn (opens in a new tab)" class="social-link" href="https://www.linkedin.com/company/king-s-junior-consulting/" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24">
+<path d="M20.4 3H3.6A.6.6 0 0 0 3 3.6v16.8c0 .33.27.6.6.6h16.8a.6.6 0 0 0 .6-.6V3.6a.6.6 0 0 0-.6-.6ZM8.34 18.2H5.67V9.63h2.67v8.57ZM7 8.45a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1Zm11.2 9.75h-2.67v-4.16c0-.99-.02-2.26-1.38-2.26-1.38 0-1.6 1.08-1.6 2.19v4.23H9.9V9.63h2.57v1.17h.04a2.83 2.83 0 0 1 2.54-1.4c2.72 0 3.22 1.79 3.22 4.12v4.68Z">
+</path>
+</svg>
+<span>
+         LinkedIn
+        </span>
+</a>
+<a aria-label="King's Junior Consulting on Instagram (opens in a new tab)" class="social-link" href="https://www.instagram.com/kingsjuniorconsulting/" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24">
+<rect height="18" rx="5" width="18" x="3" y="3">
+</rect>
+<circle cx="12" cy="12" r="4">
+</circle>
+<circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none">
+</circle>
+</svg>
+<span>
+         Instagram
+        </span>
+</a>
+</nav>
+<span class="footer-copyright">
+       © 2026 King’s Junior Consulting
+      </span>
+</footer></div>
+</section>
+</main><script defer="" src="data.js"></script><script defer="" src="directory.js"></script>
+<script defer="" src="../script.js"></script>
+
+
+</body>
+</html>
