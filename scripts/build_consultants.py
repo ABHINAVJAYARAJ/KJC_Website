@@ -131,6 +131,23 @@ def write_if_changed(path, content):
         path.write_text(content, encoding='utf-8')
 
 
+def build_homepage():
+    """Copy the development homepage to the publishing root with correct links."""
+    page = (ROOT / 'dev' / 'index.html').read_text(encoding='utf-8')
+    replacements = {
+        'href="styles.css"': 'href="dev/styles.css"',
+        'src="script.js"': 'src="dev/script.js"',
+        'src="assets/': 'src="dev/assets/',
+        'href="assets/': 'href="dev/assets/',
+        'href="consultants/': 'href="dev/consultants/',
+    }
+    for original, replacement in replacements.items():
+        if original not in page:
+            raise ValueError(f'Homepage link not found: {original}')
+        page = page.replace(original, replacement)
+    write_if_changed(ROOT / 'index.html', page)
+
+
 def main():
     """Validate the public roster and write the consultant directory pages."""
     roster = json.loads((SOURCE / 'roster.json').read_text(encoding='utf-8'))
@@ -223,6 +240,7 @@ def main():
     page = OUTPUT / 'profile-example'
     page.mkdir(exist_ok=True)
     write_if_changed(page / 'index.html', render_profile(example, is_example=True))
+    build_homepage()
     print(f'Generated {len(slugs_created)} consultant pages. Directory published: {bool(public_people)}')
 
 
